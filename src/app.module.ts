@@ -9,11 +9,11 @@ import { join } from 'path';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'ep-weathered-breeze-927410-pooler.eu-central-1.postgres.vercel-storage.com',
       port: 5432,
-      database: 'habrdb',
-      username: 'habrpguser',
-      password: 'pgpwd4habr',
+      database: 'verceldb',
+      username: 'default',
+      password: 'dPLwFtBz0rn6',
       entities: [join(__dirname, '**', '*.entity{.ts,.js}')],
       migrations: [join(__dirname, '**', '*.migration{.ts,.js}')],
       synchronize: true,
