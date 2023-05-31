@@ -9,12 +9,12 @@ import { join } from 'path';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'ep-weathered-breeze-927410-pooler.eu-central-1.postgres.vercel-storage.com',
+      host: 'dpg-chrlsm1mbg5e1f7kokmg-a',
       port: 5432,
-      url: 'postgres://default:dPLwFtBz0rn6@ep-weathered-breeze-927410-pooler.eu-central-1.postgres.vercel-storage.com:5432/verceldb',
-      database: 'verceldb',
-      username: 'default',
-      password: 'dPLwFtBz0rn6',
+      url: 'postgres://admin:14t9ADOlxaLNCRlDHdNZSgD0lGVrM0yq@dpg-chrlsm1mbg5e1f7kokmg-a.frankfurt-postgres.render.com/phone',
+      database: 'phone',
+      username: 'admin',
+      password: '14t9ADOlxaLNCRlDHdNZSgD0lGVrM0yq',
       entities: [join(__dirname, '**', '*.entity{.ts,.js}')],
       migrations: [join(__dirname, '**', '*.migration{.ts,.js}')],
       synchronize: true,
