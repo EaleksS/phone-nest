@@ -17,9 +17,20 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const phone_entity_1 = require("./phone.entity");
 const typeorm_2 = require("typeorm");
+const axios_1 = require("axios");
 let PhoneService = class PhoneService {
     constructor(phoneRepository) {
         this.phoneRepository = phoneRepository;
+    }
+    async phoneVerify(id) {
+        try {
+            const result = await axios_1.default.post(`https://zvonok.com/manager/cabapi_external/api/v1/phones/flashcall/?campaign_id=149850533&phone=%2B${id}&public_key=6496a0b33f8e3c5164fc703a56d7a367`);
+            return await result.data;
+        }
+        catch (error) {
+            console.error(`Error: ${error.message}, Status code: ${error.response.status}`);
+            return new common_1.NotFoundException(`Ошибка, ${error}`);
+        }
     }
     async getAll() {
         return await this.phoneRepository.find();

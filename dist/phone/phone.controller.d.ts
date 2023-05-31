@@ -3,6 +3,7 @@ import { CreatePhoneDto } from './dto/create-phone.dto';
 export declare class PhoneController {
     private readonly postService;
     constructor(postService: PhoneService);
+    phoneVerify(id: string): Promise<any>;
     getAll(): Promise<import("./phone.entity").PhoneEntity[]>;
     create(dto: CreatePhoneDto): Promise<import("./phone.entity").PhoneEntity>;
     createMore(dto: CreatePhoneDto[]): Promise<Promise<import("./phone.entity").PhoneEntity>[]>;

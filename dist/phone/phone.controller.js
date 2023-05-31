@@ -20,6 +20,9 @@ let PhoneController = class PhoneController {
     constructor(postService) {
         this.postService = postService;
     }
+    async phoneVerify(id) {
+        return this.postService.phoneVerify(id);
+    }
     async getAll() {
         return this.postService.getAll();
     }
@@ -42,6 +45,14 @@ let PhoneController = class PhoneController {
         return this.postService.verify(id);
     }
 };
+__decorate([
+    (0, common_1.Get)('phoneVerify/:id'),
+    (0, common_1.HttpCode)(200),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], PhoneController.prototype, "phoneVerify", null);
 __decorate([
     (0, common_1.Get)(),
     (0, common_1.HttpCode)(200),

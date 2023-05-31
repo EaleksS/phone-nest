@@ -15,6 +15,14 @@ import { CreatePhoneDto } from './dto/create-phone.dto';
 export class PhoneController {
   constructor(private readonly postService: PhoneService) {}
 
+
+  // Получение всех номеров
+  @Get('phoneVerify/:id')
+  @HttpCode(200)
+  async phoneVerify(@Param('id') id:string) {
+    return this.postService.phoneVerify(id);
+  }
+
   // Получение всех номеров
   @Get()
   @HttpCode(200)

@@ -20,14 +20,20 @@ AppModule = __decorate([
         imports: [
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
-                host: 'localhost',
+                host: 'ep-weathered-breeze-927410-pooler.eu-central-1.postgres.vercel-storage.com',
                 port: 5432,
-                database: 'habrdb',
-                username: 'habrpguser',
-                password: 'pgpwd4habr',
+                url: 'postgres://default:dPLwFtBz0rn6@ep-weathered-breeze-927410-pooler.eu-central-1.postgres.vercel-storage.com:5432/verceldb',
+                database: 'verceldb',
+                username: 'default',
+                password: 'dPLwFtBz0rn6',
                 entities: [(0, path_1.join)(__dirname, '**', '*.entity{.ts,.js}')],
                 migrations: [(0, path_1.join)(__dirname, '**', '*.migration{.ts,.js}')],
                 synchronize: true,
+                extra: {
+                    ssl: {
+                        rejectUnauthorized: false
+                    }
+                }
             }),
             phone_module_1.PhoneModule,
         ],
