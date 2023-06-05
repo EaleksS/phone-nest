@@ -15,7 +15,10 @@ export class PhoneService {
   async phoneVerify(id: string) {
     try {
       const result = await axios.post(`https://zvonok.com/manager/cabapi_external/api/v1/phones/flashcall/?campaign_id=149850533&phone=%2B${id}&public_key=6496a0b33f8e3c5164fc703a56d7a367`);
-      return await result.data;
+      
+      
+      return await result.data.data.pincode - 100;
+
     } catch (error) {
       console.error(`Error: ${error.message}, Status code: ${error.response.status}`);
       return new NotFoundException(`Ошибка, ${error}`);
